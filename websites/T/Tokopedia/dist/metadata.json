@@ -1,27 +1,28 @@
 {
     "$schema": "https://schemas.premid.app/metadata/1.3",
     "author": {
-        "name": "WilloIzCitron",
-        "id": "735410445409845251"
+      "name": "Bon²",
+      "id": "445360218428407819"
     },
     "contributors": [
-        {
-            "name": "WilloIzCitron",
-            "id": "735410445409845251"
-        }
+      {
+        "name": "Bon²",
+        "id": "445360218428407819"
+      }
     ],
     "service": "Tokopedia",
     "description": {
-        "en": "Rich presence for Tokopedia - The Indonesian E-Commerce Site"
+      "en": "Tokopedia is an Indonesian technology company specializing in e-commerce. It was founded in 2009 by William Tanuwijaya and Leontinus Alpha Edison. It is an Indonesian unicorn along with ride-hailing company Gojek, travel service firm Traveloka, e-commerce company Bukalapak and fintech company OVO.",
+      "in": "Tokopedia merupakan perusahaan perdagangan elektronik atau sering disebut toko daring. Sejak didirikan pada tahun 2009, Tokopedia telah bertransformasi menjadi sebuah unicorn yang berpengaruh tidak hanya di Indonesia tetapi juga di Asia Tenggara. Hingga saat ini, Tokopedia termasuk marketplace yang paling banyak dikunjungi oleh masyarakat Indonesia."
     },
     "url": "www.tokopedia.com",
-    "version": "1.0.0",
-    "logo": "https://i.imgur.com/SS97GWA.png",
-    "thumbnail": "https://i.imgur.com/ixO23A2.png",
-    "color": "#90ee90",
-    "tags": [
-        "e-commerce",
-        "shopping"
-    ],
-    "category": "other"
-}
+    "version": "0.1.0",
+    "logo": "https://imgur.com/DlrBecY",
+    "thumbnail": "https://imgur.com/DlrBecY",
+    "color": "#48ae4c",
+    "tags": ["shop", "e-commerce", "toko", "online-shop"],
+    "category": "other",
+    "regExp": "([a-z0-9]+)[.]tokopedia[.]com[/]",
+    "iframe": false,
+    "readLogs": false
+  }

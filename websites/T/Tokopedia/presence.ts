@@ -1,35 +1,56 @@
 const presence = new Presence({
-    clientId: "798368817318330400"
-}),
-    strings = presence.getStrings({
-        search: "presence.playback.search",
-    });
-
-var elapsed = Math.floor(Date.now() / 1000);
+    clientId: "794882603890638849" 
+  });
+  const presenceData: PresenceData = {
+      largeImageKey: "largeimage"
+  };
+ 
 presence.on("UpdateData", async () => {
-    const presenceData: PresenceData = {
-        largeImageKey: "tokopedia"
-    };
+  const presenceData: PresenceData = {
+    largeImageKey: 
+      "largeimage" ,
+    startTimestamp: Date.now(), 
+  }; 
+  const startTimestamp: number = Date.now();
+  presenceData.startTimestamp = startTimestamp;
+  switch (
+      document.location.pathname.endsWith("/") &&
+      document.location.pathname.length > 1
+        ? document.location.pathname.slice(
+            0,
+            document.location.pathname.length - 1
+        )
+        : document.location.pathname 
+  ) {
+        case "/":
+            presenceData.details = "Viewing the homepage";
+            break;
+        case "/cart/":
+            presenceData.details = "Checking the cart";
+            break;
+        case "/wishlist":
+            presenceData.details = "Viewing wishlist";
+            break;
+        case "/recent-view":
+            presenceData.details = "Viewing recents";
+            break;
+        case "/favorite-shop":
+            presenceData.details = "Viewing favorite stores";
+            break;
+        case "/profile":
+            presenceData.details = "Viewing a profile";
+            break;
+        case "/rewards":
+            presenceData.details = "Checking rewards";
+            break;
+  }
 
-    if (document.location.hostname == "www.tokopedia.com") {
-        var path = document.location.pathname;
-        if (path.includes("/p?nref=")) {
-            presenceData.details = "Viewing Product List....";
-            presenceData.startTimestamp = elapsed;
-        } else if (path.includes("/mitra")) {
-            presenceData.details = "Viewing a Tokopedia Partner....";
-            presenceData.startTimestamp = elapsed;
-        } else if (path.includes("/promo")) {
-            presenceData.details = "Viewing a Promo....";
-            presenceData.startTimestamp = elapsed;
-        } else if (path.includes("/edu")) {
-            presenceData.details = "Viewing on Seller Education Center....";
-            presenceData.startTimestamp = elapsed;
-        } else {
-            presenceData.details = "Viewing a Homepage";
-            presenceData.startTimestamp = elapsed;
-        }
-    }
-
+  if (presenceData.details == null) {
+    presence.setTrayTitle(); 
+    presence.setActivity(); 
+  } else {
     presence.setActivity(presenceData);
+  }
 });
+
+//credits to 1Cak author, allvzx for the idea
